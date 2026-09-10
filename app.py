@@ -12,7 +12,10 @@ def current_version() -> str:
 @app.get("/health")
 def health():
     return jsonify(
-        status="healthy", application="student-ml-api", version=current_version()
+        status="healthy",
+        application="student-ml-api",
+        application_version=current_version(),
+        model_version="model-1",
     )
 
 
