@@ -21,3 +21,5 @@ The following screenshots were captured during the implementation. The `08` Dock
 | `13-image-digest.png` | v1.1.0 image digest. |
 | `14-traceability.png` | v1.1.0 traceability table. |
 | `15-rollback-health.png` | Rollback to v1.0.0 verified by `/health`. |
+| `16-deliberate-ci-failure.png` | Deliberate failed CI run used for failure analysis. |
+| `17-initial-ci-failure.png` | Initial CI failure before import-path correction. |
