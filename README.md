@@ -1,5 +1,8 @@
 # Student ML API
 
+**Student:** Hamza Farooq<br>
+**Roll Number:** 22i-0912
+
 ## Overview
 
 `student-ml-api` is a deliberately small Flask inference service used to demonstrate a production-style MLOps workflow. Its prediction is `value * 2`; the focus is reliable delivery rather than model complexity.
