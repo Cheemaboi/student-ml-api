@@ -2,7 +2,8 @@
 
 ## Student and Repository Details
 
-- Student: Hamza Cheema
+- Student: Hamza Farooq
+- Roll Number: 22i-0912
 - GitHub username: Cheemaboi
 - Repository: https://github.com/Cheemaboi/student-ml-api
 - Main branch: `main`
