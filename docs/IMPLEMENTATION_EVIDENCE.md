@@ -37,6 +37,14 @@ The rollback test pulled and ran the existing `1.0.0` image from GHCR. No source
 
 The active `Protect main` ruleset targets `main`. It requires Pull Requests and passing checks, and it blocks direct changes that bypass this process. Merge commits were used because they preserve the feature-branch history.
 
+## Docker Cache Experiment
+
+I first built the image normally. I then changed only `app.py` and built again. Docker reused the dependency installation layer (`RUN pip install --no-cache-dir -r requirements.txt` was shown as `CACHED`), while the final application copy layer ran again.
+
+Next, I made a temporary comment-only change to `requirements.txt` and built again. Docker reran the dependency installation layer because the requirements-file copy layer changed. The temporary changes were removed after the experiment.
+
+This confirms that the Dockerfile order is cache-efficient: dependencies are installed before application code, so ordinary application changes do not require reinstalling Python packages.
+
 ## Screenshot Evidence
 
 The screenshots in `docs/screenshots/` are included as supporting evidence. They show the PRs, CI outcomes, active branch protection, releases, GHCR tags and digest, Docker commands, traceability, and rollback result.

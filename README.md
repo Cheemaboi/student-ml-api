@@ -98,7 +98,7 @@ The release build injects standard OCI version, revision, source, and creation-d
 
 ## Docker Layer Caching
 
-Dependencies are copied and installed before application code. Consequently an `app.py`-only change can reuse dependency layers, while a `requirements.txt` change intentionally invalidates them. Actual experiment output is documented in the evidence file.
+Dependencies are copied and installed before application code. During the local cache experiment, an `app.py`-only change reused the dependency installation layer, while a temporary `requirements.txt` change invalidated it. The observed result is recorded in the evidence file.
 
 ## Failure Analysis
 
