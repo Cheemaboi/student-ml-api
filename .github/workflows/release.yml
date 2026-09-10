@@ -22,7 +22,7 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
       - name: Run unit tests
-        run: pytest
+        run: PYTHONPATH=. pytest
       - name: Derive release metadata
         id: metadata
         shell: bash
