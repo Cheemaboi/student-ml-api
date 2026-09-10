@@ -98,6 +98,10 @@ Two failures were documented:
 
 More detail is available in [FAILURE_ANALYSIS.md](FAILURE_ANALYSIS.md).
 
+![Deliberate CI failure](screenshots/16-deliberate-ci-failure.png)
+
+![Initial CI failure](screenshots/17-initial-ci-failure.png)
+
 ## 10. Advanced Challenges
 
 The release image includes OCI metadata labels for the version, source revision, source repository, and build date. The release workflow also publishes short commit-SHA tags alongside semantic version tags.
