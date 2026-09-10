@@ -2,7 +2,7 @@
 
 ## OCI Image Metadata
 
-The Dockerfile defines standard OCI labels for image version, source revision, source repository, and build date. The release workflow passes the real GitHub tag, commit SHA, repository URL, and build timestamp as Docker build arguments. This means a published image can be connected back to the source revision that produced it.
+The Dockerfile defines standard OCI labels for image version, source revision, source repository, and build date. The release workflow supplies the real GitHub tag, commit SHA, repository URL, and build timestamp as Docker build arguments and explicit release-build labels. This means a published image can be connected back to the source revision that produced it.
 
 ## Commit SHA Image Tags
 
