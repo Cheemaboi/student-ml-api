@@ -1,0 +1,25 @@
+name: Pull Request CI
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  test-and-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Run unit tests
+        run: PYTHONPATH=. pytest
+      - name: Validate Docker build
+        run: docker build --build-arg APP_VERSION=ci --build-arg GIT_COMMIT=${{ github.sha }} --build-arg REPOSITORY_URL=${{ github.server_url }}/${{ github.repository }} --build-arg BUILD_DATE=${{ github.event.pull_request.updated_at }} -t student-ml-api:ci .
