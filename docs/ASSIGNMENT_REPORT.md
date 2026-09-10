@@ -98,6 +98,14 @@ Two failures were documented:
 
 More detail is available in [FAILURE_ANALYSIS.md](FAILURE_ANALYSIS.md).
 
+## 10. Advanced Challenges
+
+The release image includes OCI metadata labels for the version, source revision, source repository, and build date. The release workflow also publishes short commit-SHA tags alongside semantic version tags.
+
+For Docker caching, a local experiment showed that changing only `app.py` reused the dependency installation layer. A temporary `requirements.txt` change caused Docker to rerun dependency installation. The temporary changes were removed after the experiment.
+
+Further details are available in [ADVANCED_CHALLENGES.md](ADVANCED_CHALLENGES.md).
+
 ## Conclusion
 
 This assignment demonstrates a complete MLOps workflow: feature branches, Pull Requests, CI validation, Docker containerization, semantic version tags, automated GHCR publishing, artifact traceability, and rollback using a previously published image.
